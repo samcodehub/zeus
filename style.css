@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
+@font-face {
+    font-family: 'Quantum';
+    src: url('Quantum.woff2') format('woff2'),
+         url('Quantum.woff') format('woff');
+}
 
 
 
