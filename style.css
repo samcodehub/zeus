@@ -351,7 +351,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        font-size: 50px;
+        font-size: 30px;
         color: rgb(125, 131, 125);
         cursor: pointer;
         background: #fff;
@@ -367,12 +367,615 @@
 
 /* Small Devices (Landscape Phones) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    /* Your styles for small devices */
+    body {
+        overflow-x: hidden;
+        margin:0;
+        padding:0;
+        height: 100vh;
+        width: 100vw;
+        background: #d5d2fb;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(208, 208, 215, 0.2);
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+        height: 60px;
+        width: 100VW;
+        z-index: 100;
+    }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .ltext{
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Plaster', cursive;
+        font-weight: 100;
+        margin-left:20px;
+    }
+    
+    .demo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu-icon {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        cursor:pointer
+    }
+    
+    .menu-icon__button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    .menu-icon div {
+    position:absolute;
+    top :15px;
+    right :0;
+    left :0;
+    bottom :0;
+    width :36px;
+    height :16px
+    }
+    
+    .menu-icon span {
+    position:absolute;
+    display:block;
+    width :100%;
+    height :4px;
+    background-color :var(--bar-bg,#fefcfc);
+    border-radius :1px;
+    transition: all .2s cubic-bezier(.1,.82,.76,.965)
+    }
+    
+    .menu-icon span:first-of-type {
+    top :0
+    }
+    
+    .menu-icon span:last-of-type {
+    bottom :0
+    }
+    
+    .menu-icon.active span:first-of-type,
+    .menu-icon .menu-icon__cheeckbox:checked + div span:first-of-type {
+    transform :rotate(45deg);
+    top :5px
+    }
+    
+    .menu-icon.active span:last-of-type,
+    .menu-icon .menu-icon__cheeckbox:checked + div span:last-of-type {
+    transform :rotate(-45deg);
+    bottom :5px
+    }
+    
+    .menu-icon.active:hover span:first-of-type,
+    .menu-icon.active:hover span:last-of-type,
+    .menu-icon:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+    .menu-icon:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+    width :42px
+    }
+    
+    @media (min-width :1024px) {
+    .menu-icon:hover span:first-of-type {
+    width :42px
+    }
+    .menu-icon:hover span:last-of-type {
+    width :22px
+    }
+    }
+    
+    .items {
+        display: none;
+        z-index: 20; /* Add this to ensure the menu items are above .black */
+    }
+    
+    .items.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        z-index: 30;
+    }
+    
+    .items.show .item {
+        padding: 10px 20px;
+        color: #fff;
+      
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.5s;
+    }
+    
+    .items.show .item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    
+    
+    .img1 { 
+        height:50vh; 
+        width:100%; 
+        background-size: cover;
+        background-position: center;
+        
+    } 
+    
+    .img2 { 
+        height:50vh; 
+        width:100%; 
+        
+        background-size: cover;
+        background-position: center;
+    }
+
+    .animate__animated.animate__fadeInBottomRight {
+        --animate-duration: 2s;
+      }
+
+      .animate__animated.animate__fadeInBottomLeft {
+        --animate-duration: 2s;
+      }
+    
+      .black{
+        position: absolute;
+        margin-top: -40vh;
+        padding-left: 30px;
+        font-family: Future Earth;
+        color: #2e2d2d;
+        z-index: 2;
+        
+    }
+    .white{
+        position: absolute;
+        margin-top: -40vh;
+        padding-left: 30px;
+        font-family: Future Earth;
+        color: white;
+        
+    }
+    .btn1{
+        position: absolute;
+        top: 40vh; 
+        left: 5vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    
+    .btn1:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    .btn2{
+        position: absolute;
+        top: 40vh; 
+        left: 31vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    
+    .btn2:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn3{
+        position: absolute;
+        top: 90vh; 
+        left: 5vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+    
+    .btn3:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn4{
+        position: absolute;
+        top: 90vh; 
+        left: 32vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+    
+    .btn4:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .heartbeat {
+        -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+                animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+    
+    @-webkit-keyframes heartbeat {
+      from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+      10% {
+        -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      17% {
+        -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+      33% {
+        -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      45% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+    }
+    @keyframes heartbeat {
+      from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+      10% {
+        -webkit-transform: scale(0.91);
+                transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      17% {
+        -webkit-transform: scale(0.98);
+                transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+      33% {
+        -webkit-transform: scale(0.87);
+                transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+      }
+      45% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+      }
+    }
+    
+    .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 50px;
+        color: rgb(125, 131, 125);
+        cursor: pointer;
+        background: #fff;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .whatsapp-icon:hover{
+        text-shadow: 0 0 40px rgba(160, 160, 160, 0.818);
+        scale:1.1;
+        transition:1s;
+      }
 }
 
 /* Medium Devices (Tablets) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Your styles for medium devices */
+    body {
+        overflow: hidden;
+        height:100vh;
+        margin:0;
+        padding:0;
+        background: #d5d2fb;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        z-index: 100;
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .ltext{
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Plaster', cursive;
+        font-weight: 100;
+        margin-left:20px;
+    }
+    
+    .items {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-toggle{
+        display: none;
+    }
+    
+    #home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s ease-in-out;
+}
+#home:hover{
+    color: #c68642;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 28vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s ease-in-out;
+}
+#about:hover{
+    color: #c68642;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px solid #fff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+}
+#contact:hover{
+    color: #161616;
+    background: #fff;
+}
+    
+    .content{
+        display: flex;
+        width: 100%;
+       
+    }
+    
+    .img1 { 
+        height:100vh; 
+        width:50%; 
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+    } 
+
+    
+    
+
+    .img2 { 
+        height:100vh; 
+        width:50%; 
+       
+        background-size: cover;
+        background-position: center;
+        transition: all 1s ease-in-out;
+        
+        
+    }
+    .animate__animated.animate__fadeInBottomRight {
+        --animate-duration: 2s;
+      }
+
+      .animate__animated.animate__fadeInBottomLeft {
+        --animate-duration: 2s;
+      }
+      .img1:hover, .img2:hover {
+        scale:1.5;
+        transition:1s;
+        filter: brightness(50%) blur(2px);
+        opacity:0.5;
+    }
+    
+   
+    .black{
+        position: absolute;
+        padding-top: 80vh;
+        padding-left: 30px;
+        font-family: Future Earth;
+        color: #2e2d2d;
+        z-index: 2;
+        
+    }
+    .white{
+        position: absolute;
+        padding-top: 80vh;
+        padding-left: 55%;
+        font-family: Future Earth;
+        color: white;
+        
+    }
+    
+    .btn1{
+        position: absolute;
+        top: 40vh; 
+        left: 22vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 3;
+        
+    }
+    
+    .btn1:hover {
+        background: #ebebea !important;
+        color: #1b1a1a !important;
+    }
+    .btn2{
+        position: absolute;
+        top: 50vh; 
+        left: 22vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 2;
+    }
+    
+    .btn2:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn3{
+        position: absolute;
+        top: 40vh; 
+        left: 70vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 15px;
+       
+    }
+    
+    .btn3:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn4{
+        position: absolute;
+        top: 50vh; 
+        left: 70vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 15px;
+        
+    }
+    
+    .btn4:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    
+    
+    .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 50px;
+        color: rgb(125, 131, 125);
+        cursor: pointer;
+        background: #fff;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .whatsapp-icon:hover{
+        text-shadow: 0 0 40px rgba(160, 160, 160, 0.818);
+        scale:1.2;
+        transition:1s;
+      }
 }
 
 /* Large Devices (Desktops) */
@@ -410,7 +1013,7 @@
         text-decoration: none;
         color: #fff;
         font-size: 24px;
-        font-family: 'Black Ops One', cursive;
+        font-family: 'Plaster', cursive;
         font-weight: 100;
         margin-left:20px;
     }
@@ -632,5 +1235,255 @@
 
 /* Extra Large Devices (Large Desktops) */
 @media screen and (min-width: 1201px) {
-    /* Your styles for extra large devices */
+    body {
+        overflow: hidden;
+        height:100vh;
+        margin:0;
+        padding:0;
+        background: #d5d2fb;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        z-index: 100;
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .ltext{
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Plaster', cursive;
+        font-weight: 100;
+        margin-left:20px;
+    }
+    
+    .items {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-toggle{
+        display: none;
+    }
+    
+    #home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s ease-in-out;
+}
+#home:hover{
+    color: #c68642;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 31vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s ease-in-out;
+}
+#about:hover{
+    color: #c68642;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px solid #fff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    transition: 1s ease-in-out;
+}
+#contact:hover{
+    color: #161616;
+    background: #fff;
+}
+    
+    .content{
+        display: flex;
+        width: 100%;
+       
+    }
+    
+    .img1 { 
+        height:100vh; 
+        width:50%; 
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+    } 
+
+    
+    
+
+    .img2 { 
+        height:100vh; 
+        width:50%; 
+       
+        background-size: cover;
+        background-position: center;
+        transition: all 1s ease-in-out;
+        
+        
+    }
+    .animate__animated.animate__fadeInBottomRight {
+        --animate-duration: 2s;
+      }
+
+      .animate__animated.animate__fadeInBottomLeft {
+        --animate-duration: 2s;
+      }
+      .img1:hover, .img2:hover {
+        scale:1.5;
+        transition:1s;
+        filter: brightness(50%) blur(2px);
+        opacity:0.5;
+    }
+    
+   
+    .black{
+        position: absolute;
+        padding-top: 80vh;
+        padding-left: 30px;
+        font-family: Future Earth;
+        color: #2e2d2d;
+        z-index: 2;
+        
+    }
+    .white{
+        position: absolute;
+        padding-top: 80vh;
+        padding-left: 55%;
+        font-family: Future Earth;
+        color: white;
+        
+    }
+    
+    .btn1{
+        position: absolute;
+        top: 40vh; 
+        left: 22vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 3;
+        
+    }
+    
+    .btn1:hover {
+        background: #ebebea !important;
+        color: #1b1a1a !important;
+    }
+    .btn2{
+        position: absolute;
+        top: 50vh; 
+        left: 22vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 2;
+    }
+    
+    .btn2:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn3{
+        position: absolute;
+        top: 40vh; 
+        left: 70vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 15px;
+       
+    }
+    
+    .btn3:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    .btn4{
+        position: absolute;
+        top: 50vh; 
+        left: 70vw; 
+        color:#f9f7f7; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        text-decoration: none;
+        border: 1px solid #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 15px;
+        
+    }
+    
+    .btn4:hover{
+        background: #ebebea;
+        color: #1b1a1a;
+    }
+    
+    
+    
+    .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 50px;
+        color: rgb(125, 131, 125);
+        cursor: pointer;
+        background: #fff;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .whatsapp-icon:hover{
+        text-shadow: 0 0 40px rgba(160, 160, 160, 0.818);
+        scale:1.2;
+        transition:1s;
+      }
 }
