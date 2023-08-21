@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
 
 
 
@@ -9,7 +10,7 @@
 /* Extra Small Devices (Portrait Phones) */
 @media screen and (max-width: 480px) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
         margin:0;
         padding:0;
         height: 100vh;
@@ -47,7 +48,7 @@
         text-decoration: none;
         color: #fff;
         font-size: 24px;
-        font-family: 'Black Ops One', cursive;
+        font-family: 'Plaster', cursive;
         font-weight: 100;
         margin-left:20px;
     }
