@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
-@font-face {
-    font-family: 'Quantum';
-    src: url('Quantum.woff2') format('woff2'),
-         url('Quantum.woff') format('woff');
-}
+
 
 
 
@@ -17,6 +14,7 @@
         padding:0;
         height: 100vh;
         width: 100vw;
+        background: #d5d2fb;
     }
 
     header {
@@ -33,7 +31,7 @@
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
         height: 60px;
-        width: 100%;
+        width: 100VW;
         z-index: 100;
     }
     
@@ -49,7 +47,7 @@
         text-decoration: none;
         color: #fff;
         font-size: 24px;
-        font-family: Quantum;
+        font-family: 'Black Ops One', cursive;
         font-weight: 100;
         margin-left:20px;
     }
@@ -186,22 +184,23 @@
         --animate-duration: 2s;
       }
     
-    .black{
+      .black{
         position: absolute;
-        padding-top: 50px;
+        margin-top: -40vh;
         padding-left: 30px;
         font-family: Future Earth;
         color: #2e2d2d;
+        z-index: 2;
         
     }
     .white{
         position: absolute;
-        padding-top: 30px;
+        margin-top: -40vh;
         padding-left: 30px;
         font-family: Future Earth;
         color: white;
+        
     }
-    
     .btn1{
         position: absolute;
         top: 40vh; 
@@ -410,7 +409,7 @@
         text-decoration: none;
         color: #fff;
         font-size: 24px;
-        font-family: Quantum;
+        font-family: 'Black Ops One', cursive;
         font-weight: 100;
         margin-left:20px;
     }
